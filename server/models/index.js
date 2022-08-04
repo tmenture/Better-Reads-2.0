@@ -1,11 +1,9 @@
-const Book = require('./Book');
-const Comment = require('./Comment');
-const Review = require('./Review');
-const User = require('./User');
+const userSchema = require('./User');
+const bookSchema = require('./Book');
+const reviewSchema = require('./Review');
 
 module.exports = {
-    User,
-    Review,
-    Comment,
-    Book
+    userSchema,
+    bookSchema,
+    reviewSchema
 };
