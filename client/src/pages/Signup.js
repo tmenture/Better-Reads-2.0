@@ -3,15 +3,37 @@ import React from 'react';
 export default function Signup() {
   return (
     <div>
-      <h1>Signup Page</h1>
-      <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
+      <h1>Create Your Account</h1>
+      <h4>
+        fill out the fields below to start using Better Reads!
+      </h4>
+      <form className="form py-2">
+        <input
+          //value={email}
+          name="email"
+          //onChange={}
+          type="email"
+          placeholder="email"
+        />
+        <input
+          //value={password}
+          name="password"
+          //onChange={}
+          type="password"
+          placeholder="password"
+        />
+        <input
+          //value={username}
+          name="username"
+          //onChange={}
+          type="username"
+          placeholder="username"
+        />
+        <button type="button" //onClick
+        >
+        Sign Up
+        </button>
+      </form>
     </div>
   );
 }
