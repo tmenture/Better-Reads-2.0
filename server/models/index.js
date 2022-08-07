@@ -1,9 +1,3 @@
-const userSchema = require('./User');
-const bookSchema = require('./Book');
-const reviewSchema = require('./Review');
+const User = require('./User');
 
-module.exports = {
-    userSchema,
-    bookSchema,
-    reviewSchema
-};
+module.exports = { User };
