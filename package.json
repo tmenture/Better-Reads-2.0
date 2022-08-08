@@ -19,5 +19,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/tmenture/final-project/issues"
+  },
+  "homepage": "https://github.com/tmenture/final-project#readme"
 }
