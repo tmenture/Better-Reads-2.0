@@ -20,7 +20,14 @@
   "devDependencies": {
     "concurrently": "^5.1.0"
   },
+<<<<<<< HEAD
   "dependencies": {
     "bootstrap": "^5.2.0"
   }
+=======
+  "bugs": {
+    "url": "https://github.com/tmenture/final-project/issues"
+  },
+  "homepage": "https://github.com/tmenture/final-project#readme"
+>>>>>>> 0d43f3ac18720da62ca89882a38c8d04fe151978
 }

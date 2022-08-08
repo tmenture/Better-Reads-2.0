@@ -5,7 +5,7 @@ function Header({ currentPage }) {
   return (
     <ul className="nav nav-tabs">
     <h1 className="p-5 py-2">
-        <a href="/">Better Reads: <h4 className="d-inline"> We're Better than Good</h4></a>
+        <Link to ="/">Better Reads: <h4 className="d-inline"> We're Better than Good</h4></Link>
     </h1>
       <li className="nav-item py-3">
         <Link to="/"
