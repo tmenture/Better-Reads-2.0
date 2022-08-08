@@ -4,8 +4,10 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/NavBar';
 
+
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -20,7 +22,7 @@ const client = new ApolloClient({
   uri: "/graphql",
 });
 
-function App() {
+function App({children}) {
   return (
     <ApolloProvider client={client}>
         <Router>
