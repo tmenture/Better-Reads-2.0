@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Header({ currentPage }) {
   return (
     <ul className="nav nav-tabs">
@@ -15,10 +16,10 @@ function Header({ currentPage }) {
         </Link>
       </li>
       <li className="nav-item py-3">
-        <Link to="/dashboard"
-          className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
+        <Link to="/saved"
+          className={currentPage === 'SavedBooks' ? 'nav-link active' : 'nav-link'}
         >
-          Dashboard
+          My Books
         </Link>
       </li>
       <li className="nav-item py-3">
