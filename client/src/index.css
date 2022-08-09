@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Retrolight;
+  src: url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff2') format('woff2'),
+       url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff') format('woff');
+}
+
+.header {
+  font-family: Retrolight;
+  font-size: 50px;
+  background: linear-gradient(#07f5f1, #F507f1);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
