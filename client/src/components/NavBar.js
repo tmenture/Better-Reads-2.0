@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import './nav.css';
+import bookIcon from './assests/book3.png';
+import search from './assests/search.png';
+import books from './assests/books.png';
+import dollar from './assests/dollar.png';
+import login from './assests/login.png';
 
 import Auth from '../utils/auth';
 
@@ -15,27 +19,31 @@ const AppNavbar = () => {
       <Navbar>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            Better Reads
+            Better<span> <img src={bookIcon} alt="icon"></img></span> Reads
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav>
               <Nav.Link as={Link} to='/'>
-                Search For Books
+                <img src={search} alt="search icon"></img>
               </Nav.Link>
               <Nav.Link as={Link} to='/donate'>
-                Donate
+                <img src={dollar} alt="dollar icon"></img>
               </Nav.Link>
               {}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
                     See Your Books
+                    <img src={books} alt="my books icon"></img>
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>
+           
+                  <img src={login} alt="login icon"></img>
+                  </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
