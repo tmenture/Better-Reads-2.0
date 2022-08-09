@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import bookIcon from './assests/book1.png';
+import bookIcon from './assests/book3.png';
 import search from './assests/search.png';
 import books from './assests/books.png';
 import dollar from './assests/dollar.png';
