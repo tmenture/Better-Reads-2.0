@@ -85,7 +85,7 @@ const SearchBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
+      <Jumbotron fluid>
         <Container>
           <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -101,7 +101,7 @@ const SearchBooks = () => {
                 />
               </Col>
               <Col xs={12} md={4}>
-                <Button type='submit' variant='success' size='lg'>
+                <Button type='submit'>
                   Submit Search
                 </Button>
               </Col>
@@ -125,12 +125,11 @@ const SearchBooks = () => {
                 ) : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
+                  <p>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
-                      className='btn-block btn-info'
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
                         ? 'This book has already been saved!'
