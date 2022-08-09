@@ -19,11 +19,10 @@ import Signup from './pages/Signup.js';
 // import SavedBooks from './pages/SavedBooks';
 // import Navbar from './components/NavBar';
 
-<<<<<<< HEAD
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-=======
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -39,7 +38,7 @@ const authLink = setContext((_, { headers }) => {
 });
 // import { ApolloProvider } from '@apollo/react-hooks';
 // import ApolloClient from 'apollo-boost';
->>>>>>> a4e540ae21c67cb22494a4ae90476aea44089d26
+
 
 
 const client = new ApolloClient({
