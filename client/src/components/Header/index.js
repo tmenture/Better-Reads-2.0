@@ -17,7 +17,11 @@ function Header({ currentPage }) {
       </li>
       <li className="nav-item py-3">
         <Link to="/saved"
+<<<<<<< HEAD
           className={currentPage === 'SavedBooks' ? 'nav-link active' : 'nav-link'}
+=======
+          className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
+>>>>>>> 31ea1881bdecedc09fec6d0e19bfb25d797c82c1
         >
           My Books
         </Link>
