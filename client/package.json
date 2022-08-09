@@ -6,6 +6,8 @@
   "secure": false,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
+    "@stripe/react-stripe-js": "^1.10.0",
+    "@stripe/stripe-js": "^1.35.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -18,7 +20,9 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^10.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

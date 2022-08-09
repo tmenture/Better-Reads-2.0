@@ -22,6 +22,9 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/'>
                 Search For Books
               </Nav.Link>
+              <Nav.Link as={Link} to='/donate'>
+                Donate
+              </Nav.Link>
               {}
               {Auth.loggedIn() ? (
                 <>
