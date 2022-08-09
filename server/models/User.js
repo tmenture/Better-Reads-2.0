@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const { Schema, model } = mongoose;
 const bcrypt = require('bcrypt');
+
 const bookSchema = require('./Book')
-const reviewSchema = require('./Review');
 
 const userSchema = new Schema(
   {
@@ -17,6 +16,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
       match: [/.+@.+\..+/, 'Must use a valid email address']
     },
     password: {
@@ -25,7 +25,6 @@ const userSchema = new Schema(
       minlength: 5
     },
     savedBooks: [bookSchema],
-    reviews: [reviewSchema]
   },
   {
     toJSON: {
@@ -49,10 +48,11 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
+// shows number of books saved by a user
 userSchema.virtual('bookCount').get(function () {
   return this.savedBooks.length;
 });
 
-const User = mongoose.model('User', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

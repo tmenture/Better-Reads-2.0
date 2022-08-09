@@ -11,18 +11,12 @@ const typeDefs = gql`
         bookLink: String
     }
 
-    type Review {
-        _id: ID!
-        reviewText: String 
-    }
-
     type User {
         _id: ID!
         username: String
         email: String
         bookCount: Int
         savedBooks: [Book]
-        reviews: [Review]
     }
 
     input savedBooks {
@@ -30,10 +24,6 @@ const typeDefs = gql`
         title: String
         bookId: String
         bookImage: String
-    }
-
-    input reviews {
-        reviewText: String
     }
 
     type Query {
@@ -45,7 +35,6 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         saveBook(input: savedBooks!): User
         deleteBook(bookId: ID!): User
-        viewReviews(input: reviews!): User
     }
 
     type Auth {
