@@ -112,9 +112,10 @@ const SearchBooks = () => {
 
       <Container>
         <h2>
+          {/* need to change this  */}
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+            : ' '}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {

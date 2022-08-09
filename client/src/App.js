@@ -53,11 +53,12 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          <Navbar />
+          <Switch>
           <div className="container">
               <Route 
-                path="/" 
-                element={<Home />} 
+                exact path="/" 
+                component={SearchBooks} 
               />
               <Route 
                 path="/login" 
@@ -68,27 +69,19 @@ function App() {
                 element={<Signup />} 
               />
               <Route 
-                path="/dashboard" 
-                element={<Dashboard />} 
+                exact path='/saved' 
+                component={SavedBooks} 
               />
               <Route 
                 path="/singleBook" 
                 element={<SingleBook />} 
               />
           </div>
+              <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+          </Switch>
           <Footer />
         </div>
       </Router>
-        <Router>
-          <>
-          <Navbar />
-          <Switch>
-            <Route exact path='/' component={SearchBooks} />
-            <Route exact path='/saved' component={SavedBooks} />
-            <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-          </Switch>
-          </>
-        </Router> 
     </ApolloProvider>
 
   );
