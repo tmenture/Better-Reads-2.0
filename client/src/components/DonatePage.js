@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -10,10 +9,6 @@ function DonatePage() {
         name: "Send Us a Dollar",
         price: 1.00,
     });
-
-    function handleToken(token, addresses) {
-        console.log({token, addresses})
-    };
 
     async function handleToken(token, addresses) {
         const response = await axios.post(

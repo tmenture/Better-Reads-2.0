@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
-import { saveBook, searchGoogleBooks } from '../utils/API';
-import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import { searchGoogleBooks } from '../utils/API';
+import {  getSavedBookIds } from '../utils/localStorage';
 
 import { SAVE_BOOK } from '../utils/mutations';
 import {useMutation} from '@apollo/react-hooks';
@@ -14,7 +14,7 @@ const SearchBooks = () => {
 
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-  const [saveBook, { error }] = useMutation(SAVE_BOOK);
+  const [saveBook] = useMutation(SAVE_BOOK);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -59,7 +59,7 @@ const SearchBooks = () => {
     }
 
     try {
-      const {data} = await saveBook({
+       await saveBook({
         variables: { input: bookToSave }
       });
 
@@ -95,6 +95,7 @@ const SearchBooks = () => {
           </Form>
         </Container>
       </Jumbotron>
+
       <Container>
         <h2>
           {searchedBooks.length
