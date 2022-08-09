@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,21 +6,13 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home.js';
-import Login from './pages/Login.js';
 import SingleBook from './pages/SingleBook.js';
-import Dashboard from './pages/Dashboard.js';
-import Signup from './pages/Signup.js';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/NavBar';
 
-
-// import { ApolloProvider } from '@apollo/react-hooks';
-// import ApolloClient from 'apollo-boost';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -54,34 +45,37 @@ const client = new ApolloClient({
   uri: "/graphql",
 });
 
-function App({children}) {
+function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
+          <Navbar />
+          <Switch>
+            <div className="container">
               <Route 
-                path="/" 
-                element={<Home />} 
+                exact path="/" 
+                component={SearchBooks} 
               />
-              <Route 
+              {/* <Route 
                 path="/login" 
                 element={<Login />} 
               />
               <Route 
                 path="/signup" 
                 element={<Signup />} 
-              />
+              /> */}
               <Route 
-                path="/dashboard" 
-                element={<Dashboard />} 
+                exact path='/saved' 
+                component={SavedBooks} 
               />
               <Route 
                 path="/singleBook" 
                 element={<SingleBook />} 
               />
           </div>
+              <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+          </Switch>
           <Footer />
         </div>
       </Router>

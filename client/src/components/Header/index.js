@@ -15,7 +15,7 @@ function Header({ currentPage }) {
         </Link>
       </li>
       <li className="nav-item py-3">
-        <Link to="/dashboard"
+        <Link to="/saved"
           className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
         >
           Dashboard
