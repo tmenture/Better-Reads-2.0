@@ -1,37 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-import { useQuery, useMutation } from "@apollo/react-hooks";
 
+import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
+
+import {useMutation, useQuery} from '@apollo/react-hooks';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
+
+  const { loading, data} = useQuery(GET_ME);
+  const [removeBook, {error}] = useMutation(REMOVE_BOOK);
+
   const userData = data?.me || [];
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
   const handleDeleteBook = async (bookId) => {
+
     const token = Auth.loggedIn() ? Auth.getToken() : null;
+
     if (!token) {
       return false;
     }
+
     try {
-      const response = await removeBook({
-        variables: { bookId: bookId },
+      const { data } = await removeBook({
+        variables: { bookId },
       });
 
-      if (!response) {
-        throw new Error("something went wrong!");
-      }
       removeBookId(bookId);
     } catch (err) {
-      console.error(error);
+      console.error(err);
     }
   };
 
-  // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }
@@ -52,7 +55,7 @@ const SavedBooks = () => {
         <CardColumns>
           {userData.savedBooks.map((book) => {
             return (
-              <Card key={book.bookId}>
+              <Card key={book.bookId} border='dark'>
                 {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>

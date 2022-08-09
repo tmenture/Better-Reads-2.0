@@ -1,5 +1,4 @@
 import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,13 +6,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home.js';
-import Login from './pages/Login.js';
 import SingleBook from './pages/SingleBook.js';
-import Dashboard from './pages/Dashboard.js';
-import Signup from './pages/Signup.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
@@ -55,19 +49,19 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Navbar />
           <Switch>
-          <div className="container">
+            <div className="container">
               <Route 
                 exact path="/" 
                 component={SearchBooks} 
               />
-              <Route 
+              {/* <Route 
                 path="/login" 
                 element={<Login />} 
               />
               <Route 
                 path="/signup" 
                 element={<Signup />} 
-              />
+              /> */}
               <Route 
                 exact path='/saved' 
                 component={SavedBooks} 
