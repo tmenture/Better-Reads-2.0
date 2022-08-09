@@ -4,11 +4,27 @@
        url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff') format('woff');
 }
 
-.header {
+.header, #nav {
   font-family: Retrolight;
-  font-size: 50px;
   background: linear-gradient(#07f5f1, #F507f1);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.header {
+  font-size: 50px;
+}
+
+#nav {
+  font-size: 30px;
+}
+
+.header-img {
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+#navbar {
+  justify-content: right;
 }

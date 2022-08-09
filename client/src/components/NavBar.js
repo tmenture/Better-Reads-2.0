@@ -19,11 +19,11 @@ const AppNavbar = () => {
       <Navbar>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            <span className='header'>Better</span><span> <img src={bookIcon} alt="icon"></img></span> <span className='header'>Reads</span>
+            <span className='header'>Better</span><span> <img src={bookIcon} alt="icon" className='header-img'></img></span> <span className='header'>Reads</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
-            <Nav>
+            <Nav id='nav'>
               <Nav.Link as={Link} to='/'>
                 <img src={search} alt="search icon"></img>
               </Nav.Link>
