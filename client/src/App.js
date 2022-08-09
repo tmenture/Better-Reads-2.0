@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -14,10 +14,10 @@ import Login from './pages/Login.js';
 import SingleBook from './pages/SingleBook.js';
 import Dashboard from './pages/Dashboard.js';
 import Signup from './pages/Signup.js';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import SearchBooks from './pages/SearchBooks';
-// import SavedBooks from './pages/SavedBooks';
-// import Navbar from './components/NavBar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import SearchBooks from './pages/SearchBooks';
+import SavedBooks from './pages/SavedBooks';
+import Navbar from './components/NavBar';
 
 
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -36,24 +36,22 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-// import { ApolloProvider } from '@apollo/react-hooks';
-// import ApolloClient from 'apollo-boost';
 
 
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
-  // request: (operation) => {
-  //   const token = localStorage.getItem("id_token");
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
 
-  //   operation.setContext({
-  //     headers: {
-  //       authorization: token ? `Bearer ${token}` : "",
-  //     },
-  //   });
-  // },
-  // uri: "/graphql",
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
+  uri: "/graphql",
 });
 
 function App({children}) {
@@ -63,7 +61,6 @@ function App({children}) {
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
-            <Routes>
               <Route 
                 path="/" 
                 element={<Home />} 
@@ -84,12 +81,11 @@ function App({children}) {
                 path="/singleBook" 
                 element={<SingleBook />} 
               />
-            </Routes>
           </div>
           <Footer />
         </div>
       </Router>
-        {/* <Router>
+        <Router>
           <>
           <Navbar />
           <Switch>
@@ -98,7 +94,7 @@ function App({children}) {
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
           </>
-        </Router>  */}
+        </Router> 
     </ApolloProvider>
 
   );
