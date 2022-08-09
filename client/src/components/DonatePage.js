@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
+import "./donate.css";
 
 function DonatePage() {
     const [product] = React.useState({

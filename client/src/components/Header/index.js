@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './index.css';
+
 
 function Header({ currentPage }) {
   return (
@@ -18,7 +20,7 @@ function Header({ currentPage }) {
         <Link to="/saved"
           className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
         >
-          Dashboard
+          My Books
         </Link>
       </li>
       <li className="nav-item py-3">
