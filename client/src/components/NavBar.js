@@ -19,7 +19,7 @@ const AppNavbar = () => {
       <Navbar>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            Better Reads <span> <img src={bookIcon} alt="icon"></img></span>
+            Better<span> <img src={bookIcon} alt="icon"></img></span> Reads 
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
