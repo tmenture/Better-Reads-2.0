@@ -16,6 +16,10 @@
   font-size: 50px;
 }
 
+.navbar {
+  border-bottom: solid 2px magenta;
+}
+
 #nav {
   font-size: 30px;
 }
@@ -27,4 +31,10 @@
 
 #navbar {
   justify-content: right;
+}
+
+#footer {
+  text-align: center;
+  padding-bottom: 20px;
+  border-top: solid 2px magenta;
 }
