@@ -13,26 +13,17 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/NavBar';
 import DonatePage from './components/DonatePage'
 
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
-// const authLink = setContext((_, { headers }) => {
-//   const token = localStorage.getItem('id_token');
-//   return {
-//     headers: {
-//       ...headers,
-//       authorization: token ? `Bearer ${token}` : '',
-//     },
-//   };
-// });
 
 const link = createHttpLink({
   useGETForQueries: true,
   uri: "/graphql",
 });
 
-const cache = new InMemoryCache();
+// const cache = new InMemoryCache();
 
 const authLink = setContext((_, { headers }) => {
   const token = sessionStorage.getItem("id");
@@ -44,27 +35,27 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-export const client = new ApolloClient({
-  link: authLink.concat(link),
-  cache,
-});
-
-
-
-// const client = new ApolloClient({
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache(),
-//   request: (operation) => {
-//     const token = localStorage.getItem("id_token");
-
-//     operation.setContext({
-//       headers: {
-//         authorization: token ? `Bearer ${token}` : "",
-//       },
-//     });
-//   },
-//   uri: "/graphql",
+// export const client = new ApolloClient({
+//   link: authLink.concat(link),
+//   cache,
 // });
+
+
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
+  uri: "/graphql",
+});
 
 function App() {
   return (
