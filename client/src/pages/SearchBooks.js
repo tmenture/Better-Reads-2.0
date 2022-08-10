@@ -109,8 +109,8 @@ const SearchBooks = () => {
                 {book.image ? (
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
-                <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
+                <Card.Body id='card-body'>
+                  <Card.Title id='card-title'>{book.title}</Card.Title>
                   <p>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (

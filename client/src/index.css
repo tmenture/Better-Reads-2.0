@@ -1,3 +1,7 @@
+HTML {
+  background: #D046cd;
+}
+
 @font-face {
   font-family: Retrolight;
   src: url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff2') format('woff2'),
@@ -18,6 +22,7 @@
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  padding-bottom: 35px;
 }
 
 .header {
@@ -51,11 +56,19 @@
 }
 
 #submit, #save {
+  padding: 11.5px 7px;
+  border-radius: 3px;
+}
+
+#submit {
   background: yellow;
   border-color: yellow;
-  padding: 11.5px 7px;
   color: #1d1d1d;
-  border-radius: 3px;
+}
+
+#save {
+  background: #f851f5;
+  border-color: #f851f5; 
 }
 
 .navbar-parent {
@@ -83,15 +96,25 @@
 #searched {
   margin-bottom: 25px;
   vertical-align: middle;
-  padding-top: 30px
+  padding-top: 30px;
+  font-size: 50px;
 }
 
 #searched-text {
   margin-bottom: 25px;
+  text-align: center;
 }
 
-#save {
+#card-holder {
+  border-width: medium;
+}
+
+#card-body {
   text-align: center;
+}
+
+#card-title {
+  font-family: 'Comic Sans MS', "Comic Sans", "Arial";
 }
 
 #footer {
