@@ -147,9 +147,12 @@ HTML {
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 958px) {
   .container-fluid {
     display: flex;
     flex-direction: column;
+  }
+  .form-row {
+    justify-content: center;
   }
 }
