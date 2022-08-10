@@ -18,10 +18,10 @@ const httpLink = createHttpLink({
 });
 
 
-const link = createHttpLink({
-  useGETForQueries: true,
-  uri: "/graphql",
-});
+// const link = createHttpLink({
+//   useGETForQueries: true,
+//   uri: "/graphql",
+// });
 
 // const cache = new InMemoryCache();
 
