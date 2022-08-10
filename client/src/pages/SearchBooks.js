@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API';
-import {  getSavedBookIds } from '../utils/localStorage';
+import {  saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
-import { SAVE_BOOK } from '../utils/mutations';
 import {useMutation} from '@apollo/react-hooks';
+import { SAVE_BOOK } from '../utils/mutations';
+
 
 const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
+
   const [searchInput, setSearchInput] = useState('');
 
-  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
+   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
   const [saveBook] = useMutation(SAVE_BOOK);
+
+  useEffect(() => {
+    return () => saveBookIds(savedBookIds);
+  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
