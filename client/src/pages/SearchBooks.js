@@ -71,9 +71,9 @@ const SearchBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid>
+      <Jumbotron fluid id='jumboSearch'>
         <Container>
-          <h1>Search for Books!</h1>
+          <h1 id='search'>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -87,7 +87,7 @@ const SearchBooks = () => {
                 />
               </Col>
               <Col xs={12} md={4}>
-                <Button type='submit'>
+                <Button type='submit' id='submit'>
                   Submit Search
                 </Button>
               </Col>
