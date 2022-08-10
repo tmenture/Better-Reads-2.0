@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -11,36 +12,21 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/NavBar';
-import DonatePage from './components/DonatePage'
+import DonatePage from './components/DonatePage';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-
-// const link = createHttpLink({
-//   useGETForQueries: true,
-//   uri: "/graphql",
-// });
-
-// const cache = new InMemoryCache();
-
 const authLink = setContext((_, { headers }) => {
-  const token = sessionStorage.getItem("id");
+  const token = localStorage.getItem('id_token');
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
-
-// export const client = new ApolloClient({
-//   link: authLink.concat(link),
-//   cache,
-// });
-
-
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
@@ -64,7 +50,7 @@ function App() {
         <div className="flex-column justify-flex-start min-100-vh">
           <Navbar />
           <Switch>
-            <Fragment>
+            <>
               <Route 
                 exact path="/" 
                 component={SearchBooks} 
@@ -77,7 +63,7 @@ function App() {
                 path="/donate" 
                 component={DonatePage} 
               /> }
-          </Fragment>
+          </>
               <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
 
