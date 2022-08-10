@@ -101,3 +101,20 @@
   padding: 15px 0;
   margin-top: 100px;
 }
+
+.modal-header {
+  background: #07f5f1;
+}
+
+#login-header, #signup-header {
+  color: #1d1d1d;
+}
+
+.modal-body {
+  background: yellow;
+}
+
+#login-submit, #signup-submit {
+  background: magenta;
+  border: none;
+}
