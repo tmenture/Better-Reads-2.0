@@ -16,7 +16,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar>
+      <Navbar className='navbar-parent'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             <span className='header'>Better</span><span> <img src={bookIcon} alt="icon" className='header-img'></img></span> <span className='header'>Reads</span>

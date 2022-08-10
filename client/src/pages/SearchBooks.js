@@ -72,11 +72,11 @@ const SearchBooks = () => {
   return (
     <>
       <Jumbotron fluid id='jumboSearch'>
-        <Container>
+        <Container id='search-text'>
           <h1 id='search'>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
-            <Form.Row>
-              <Col xs={12} md={8}>
+            <Form.Row id='form-row'>
+              <Col xs={12} lg={11} md={9} sm={7}>
                 <Form.Control
                   name='searchInput'
                   value={searchInput}
@@ -86,9 +86,9 @@ const SearchBooks = () => {
                   placeholder='Search for a book'
                 />
               </Col>
-              <Col xs={12} md={4}>
+              <Col xs={12} lg={1} md={2} sm={3} id='submit-button'>
                 <Button type='submit' id='submit'>
-                  Submit Search
+                  Submit
                 </Button>
               </Col>
             </Form.Row>
@@ -96,8 +96,8 @@ const SearchBooks = () => {
         </Container>
       </Jumbotron>
 
-      <Container>
-        <h2>
+      <Container id='searched-text'>
+        <h2 id='searched'>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
             : ''}
@@ -105,7 +105,7 @@ const SearchBooks = () => {
         <CardColumns>
           {searchedBooks.map((book) => {
             return (
-              <Card key={book.bookId} border='dark'>
+              <Card key={book.bookId} border='dark' id='card-holder'>
                 {book.image ? (
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}

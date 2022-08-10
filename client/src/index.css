@@ -1,12 +1,18 @@
+
+
+body {
+  padding-bottom: 100px;
+}
+
 @font-face {
   font-family: Retrolight;
   src: url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff2') format('woff2'),
        url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff') format('woff');
 }
 
-.header, #nav, #footer {
+.header, #nav, #footer, #searched {
   font-family: Retrolight;
-  background: linear-gradient(#07f5f1, #F507f1);
+  background: linear-gradient(#140DA6, #F507f1);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -22,10 +28,6 @@
 
 .header {
   font-size: 50px;
-}
-
-.navbar {
-  border-bottom: solid 2px magenta;
 }
 
 #nav {
@@ -45,6 +47,15 @@
   background: #D046cd;
 }
 
+#search {
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+}
+
 #submit {
   background: yellow;
   border-color: yellow;
@@ -53,10 +64,27 @@
   border-radius: 3px;
 }
 
+.navbar-parent {
+  background: white;
+}
+
+#root {
+  background: #07f5f1;
+}
+
+#searched-text {
+  background: yellow;
+  border-radius: 4px;
+}
+
+#searched {
+  margin-bottom: 25px;
+  vertical-align: middle;
+  padding-top: 30px
+}
+
 #footer {
   text-align: center;
-  border-top: solid 2px #07f5f1;
-  border-width: 100%;
   font-size: 20px;
   padding: 15px 0;
 }
