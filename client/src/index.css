@@ -27,10 +27,19 @@ HTML {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   padding-bottom: 50px;
+  text-align: center;
+  font-size: 50px;
+  vertical-align: middle;
+  margin: 0;
 }
 
 .header {
   font-size: 50px;
+}
+
+#site-title {
+  margin: 0;
+  padding: 0px;
 }
 
 #nav {
@@ -48,13 +57,6 @@ HTML {
 
 #jumboSearch {
   background: #D046cd;
-}
-
-#search {
-  text-align: center;
-  font-size: 50px;
-  vertical-align: middle;
-  margin: 0;
 }
 
 .form-row {
@@ -147,9 +149,49 @@ HTML {
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 958px) {
   .container-fluid {
     display: flex;
     flex-direction: column;
+  }
+  .form-row {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #search {
+    font-size: 45px;
+  }
+  #searched {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .footer {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 551px) {
+  .header {
+    font-size: 35px;
+  }
+  .header-img {
+    padding-bottom: 18px;
+  }
+  #nav {
+    font-size: 20px;
+  }
+  #search {
+    font-size: 30px;
+    padding-bottom: 15px;
+  }
+  #searched {
+    font-size: 30px;
+  }
+  .card {
+    max-width: 300px;
   }
 }
