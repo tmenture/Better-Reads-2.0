@@ -81,4 +81,3 @@
 * [Alex's GitHub](https://github.com/AlexPap1)
 
 © 2022 Better Reads 2.0
-
