@@ -4,7 +4,7 @@ import './index.css'
 const Footer = () => {
   return (
     <footer>
-      <div className="container fixed-bottom" id="footer">
+      <div className="fixed-bottom" id="footer">
         Better Reads Version 2.0 &copy;{new Date().getFullYear()} Caitlin Clifford, Liz DiTullio, Thomas Menture, and Alex Pappagallo
       </div>
     </footer>
