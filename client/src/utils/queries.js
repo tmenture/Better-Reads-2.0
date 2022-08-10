@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const QUERY_ME = gql`
-  {
-    me {
+ {
+    dashboard {
       _id
       username
       email
@@ -15,7 +15,8 @@ export const QUERY_ME = gql`
         link
         title
         description
+    }
       }
     }
-  }
+
 `;
