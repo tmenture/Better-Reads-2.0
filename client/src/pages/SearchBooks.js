@@ -105,7 +105,7 @@ const SearchBooks = () => {
         <CardColumns>
           {searchedBooks.map((book) => {
             return (
-              <Card key={book.bookId} border='dark' id='card-holder'>
+              <Card key={book.bookId} id='card-holder'>
                 {book.image ? (
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
@@ -114,7 +114,7 @@ const SearchBooks = () => {
                   <p>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
-                    <Button
+                    <Button id='save'
                       disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
