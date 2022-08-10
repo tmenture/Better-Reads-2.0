@@ -9,7 +9,6 @@ const {
     login
 } = require('../../controllers/userController');
 
-// imports the middleware
 const { authMiddleware } = require('../../utils/auth');
 
 // put middleware before routes so we can validate the users token
