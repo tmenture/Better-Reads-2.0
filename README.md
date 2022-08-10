@@ -3,8 +3,8 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Deployed Application:
-* [Heroku Link:](https://better-reads-2.herokuapp.com/)
-* [GitHub Repository:](https://github.com/tmenture/final-project)
+* [Heroku Link](https://better-reads-2.herokuapp.com/)
+* [GitHub Repository](https://github.com/tmenture/final-project)
 
 ## Description:
 * BetterReads 2.0 is your very own digital bookshelf. Users can search any title or author, and be presented with many options to choose from. If a user wants more they can make an account to save books that interest them to their read list, and can make donations if they really enjoy the website.

@@ -15,7 +15,7 @@ const SearchBooks = () => {
 
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-  const [saveBook, {error}]  = useMutation(SAVE_BOOK);
+ const [saveBook, {error}]  = useMutation(SAVE_BOOK);
 
   useEffect(() => {
     return () => saveBookIds(savedBookIds);
@@ -82,17 +82,17 @@ const SearchBooks = () => {
           <h1 id='search'>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row id='form-row'>
-              <Col xs={12} lg={11} md={9} sm={7}>
+              <Col xs={9} lg={11} md={9} sm={7}>
                 <Form.Control
                   name='searchInput'
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a book'
+                  placeholder='Search for a book!'
                 />
               </Col>
-              <Col xs={12} lg={1} md={2} sm={3} id='submit-button'>
+              <Col xs={1} lg={1} md={2} sm={3} id='submit-button'>
                 <Button type='submit' id='submit'>
                   Submit
                 </Button>
@@ -115,8 +115,8 @@ const SearchBooks = () => {
                 {book.image ? (
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
-                <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
+                <Card.Body id='card-body'>
+                  <Card.Title id='card-title'>{book.title}</Card.Title>
                   <p>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (

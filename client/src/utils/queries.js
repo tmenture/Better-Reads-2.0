@@ -1,19 +1,22 @@
 import gql from 'graphql-tag';
 
 export const QUERY_ME = gql`
-  {
-    me {
+ {
+    dashboard {
       _id
       username
       email
+      bookCount
       savedBooks {
+        # _id
         bookId
         authors
         image
-        description
-        title
         link
+        title
+        description
+    }
       }
     }
-  }
+
 `;
