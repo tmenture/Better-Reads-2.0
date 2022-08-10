@@ -6,7 +6,7 @@
 * description
 
 ## Deployed Application:
-* link
+* https://better-reads-2.herokuapp.com/
 
 ## Screenshot:
 ![Final-project-screenshot](https://user-images.githubusercontent.com/99096273/183809704-9a14d937-ca26-42d1-b701-f98be1c74b1b.png)
