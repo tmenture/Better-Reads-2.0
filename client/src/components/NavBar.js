@@ -16,14 +16,14 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar>
+      <Navbar className='navbar-parent'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            Better<span> <img src={bookIcon} alt="icon"></img></span> Reads
+            <span className='header'>Better</span><span> <img src={bookIcon} alt="icon" className='header-img'></img></span> <span className='header'>Reads</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
-            <Nav>
+            <Nav id='nav'>
               <Nav.Link as={Link} to='/'>
                 <img src={search} alt="search icon"></img>
               </Nav.Link>
@@ -61,17 +61,17 @@ const AppNavbar = () => {
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                  <Nav.Link eventKey='login' id='login-header'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link eventKey='signup' id='signup-header'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Tab.Content>
-              <Tab.Pane eventKey='login'>
+              <Tab.Pane eventKey='login' id='login-toggle'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
               <Tab.Pane eventKey='signup'>
