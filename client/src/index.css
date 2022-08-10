@@ -27,10 +27,19 @@ HTML {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   padding-bottom: 50px;
+  text-align: center;
+  font-size: 50px;
+  vertical-align: middle;
+  margin: 0;
 }
 
 .header {
   font-size: 50px;
+}
+
+#site-title {
+  margin: 0;
+  padding: 0px;
 }
 
 #nav {
@@ -48,13 +57,6 @@ HTML {
 
 #jumboSearch {
   background: #D046cd;
-}
-
-#search {
-  text-align: center;
-  font-size: 50px;
-  vertical-align: middle;
-  margin: 0;
 }
 
 .form-row {
@@ -154,5 +156,11 @@ HTML {
   }
   .form-row {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #search {
+    font-size: 45px;
   }
 }
