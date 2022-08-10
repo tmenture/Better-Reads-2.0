@@ -11,7 +11,7 @@ const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
 
-  const userData = data?.me || {};
+  const userData = data?.dashboard || [];
 
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -40,7 +40,7 @@ const SavedBooks = () => {
     <>
       <Jumbotron fluid>
         <Container>
-          <h1>Viewing {userData.username}'s saved books!</h1>
+          <h1> Your Saved Books</h1>
         </Container>
       </Jumbotron>
       <Container>

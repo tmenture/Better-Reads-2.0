@@ -18,7 +18,7 @@ const AppNavbar = () => {
     <>
       <Navbar className='navbar-parent'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
+          <Navbar.Brand as={Link} to='/' id='site-title'>
             <span className='header'>Better</span><span> <img src={bookIcon} alt="icon" className='header-img'></img></span> <span className='header'>Reads</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
