@@ -1,3 +1,7 @@
+HTML {
+  background: #D046cd;
+}
+
 @font-face {
   font-family: Retrolight;
   src: url('../src/retrolight-retro-neon-display-2021-09-01-18-12-37-utc/Retrolight.woff2') format('woff2'),
@@ -12,12 +16,17 @@
     -webkit-text-fill-color: transparent;
 }
 
+.header {
+  width: 100%
+}
+
 #search {
   font-family: Retrolight;
   background: linear-gradient(yellow, #07f5f1);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  padding-bottom: 50px;
 }
 
 .header {
@@ -43,6 +52,9 @@
 
 #search {
   text-align: center;
+  font-size: 50px;
+  vertical-align: middle;
+  margin: 0;
 }
 
 .form-row {
@@ -51,11 +63,19 @@
 }
 
 #submit, #save {
+  padding: 11.5px 7px;
+  border-radius: 3px;
+}
+
+#submit {
   background: yellow;
   border-color: yellow;
-  padding: 11.5px 7px;
   color: #1d1d1d;
-  border-radius: 3px;
+}
+
+#save {
+  background: #f851f5;
+  border-color: #f851f5; 
 }
 
 .navbar-parent {
@@ -78,20 +98,27 @@
 #searched-text {
   background: yellow;
   border-radius: 5px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 #searched {
   margin-bottom: 25px;
   vertical-align: middle;
-  padding-top: 30px
+  padding-top: 30px;
+  font-size: 50px;
 }
 
-#searched-text {
-  margin-bottom: 25px;
+#card-holder {
+  border-width: medium;
 }
 
-#save {
+#card-body {
   text-align: center;
+}
+
+#card-title {
+  font-family: 'Comic Sans MS', "Comic Sans", "Arial";
 }
 
 #footer {
@@ -117,4 +144,12 @@
 #login-submit, #signup-submit {
   background: magenta;
   border: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
 }

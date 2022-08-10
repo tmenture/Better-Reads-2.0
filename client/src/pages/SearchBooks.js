@@ -89,7 +89,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a book'
+                  placeholder='Search for a book!'
                 />
               </Col>
               <Col xs={12} lg={1} md={2} sm={3} id='submit-button'>
@@ -115,8 +115,8 @@ const SearchBooks = () => {
                 {book.image ? (
                   <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                 ) : null}
-                <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
+                <Card.Body id='card-body'>
+                  <Card.Title id='card-title'>{book.title}</Card.Title>
                   <p>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
                   {Auth.loggedIn() && (
