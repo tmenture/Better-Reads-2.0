@@ -173,3 +173,19 @@ HTML {
     font-size: 15px;
   }
 }
+
+@media screen and (max-width: 551px) {
+  .header {
+    font-size: 35px;
+  }
+  .header-img {
+    padding-bottom: 18px;
+  }
+  #nav {
+    font-size: 20px;
+  }
+  #search {
+    font-size: 30px;
+    padding-bottom: 15px;
+  }
+}
