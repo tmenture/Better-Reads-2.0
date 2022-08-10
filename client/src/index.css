@@ -163,4 +163,7 @@ HTML {
   #search {
     font-size: 45px;
   }
+  #searched {
+    font-size: 40px;
+  }
 }
