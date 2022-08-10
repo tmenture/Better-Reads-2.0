@@ -1,10 +1,11 @@
 import React from 'react';
+import './index.css'
 
 const Footer = () => {
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container">
-        Better Reads Version 2.0 &copy;{new Date().getFullYear()} Caitlin Clifford, Liz DiTullio, Thomas Menture, and Alex Pappagallo
+    <footer className="fixed-bottom" >
+      <div id="footer">
+        <span className='footer'>Better Reads Version 2.0 &copy;{new Date().getFullYear()} Caitlin Clifford, Liz DiTullio, Thomas Menture, and Alex Pappagallo</span>
       </div>
     </footer>
   );

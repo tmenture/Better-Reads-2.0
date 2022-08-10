@@ -1,6 +1,6 @@
 // imports user model and sign token from file location
 const { User } = require('../models');
-const { signToke } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 module.exports = {
     // finds single user for dashboard page
